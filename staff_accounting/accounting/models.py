@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 
-class Employers(models.Model):
+class Employer(models.Model):
     name = models.CharField(max_length=120, verbose_name='Iмя')
     patronymic = models.CharField(max_length=120, verbose_name='По-батьковi')
     surname = models.CharField(max_length=120,verbose_name='Прiзвище')
@@ -13,7 +13,7 @@ class Employers(models.Model):
     status = models.ForeignKey('Status', verbose_name='Статус', on_delete=models.DO_NOTHING)
     phone_number = PhoneNumberField(verbose_name = 'Номер телефону')
     email = models.CharField(max_length=120, verbose_name='Електронна скринька')
-    description = models.TextField(verbose_name='опис')
+    description = models.TextField(verbose_name='Опис')
     
     class Meta():
         verbose_name = 'Працiвник'
