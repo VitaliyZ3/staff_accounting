@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'django_tables2',
     'django_filters',
+    'crispy_forms',
     'bootstrap3',
     # Apps
     'accounting.apps.AccountingConfig',

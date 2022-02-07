@@ -1,10 +1,12 @@
+from pyexpat import model
 from django.shortcuts import render
+from django.views import generic
 # import project modules
 from .models import Employer, Status, Insurance, Post
 from .tables import EmployerTable, StatusTable, InsuranceTable, PostTable
 from .filters import EmployerFilter, StatusFilter, InsuranceFilter, PostFilter
 # downloaded fraemworks
-from django_tables2 import SingleTableView, SingleTableMixin
+from django_tables2 import SingleTableMixin
 from django_filters.views import FilterView
 
 
@@ -37,4 +39,32 @@ class PostListView(SingleTableMixin, FilterView):
 
     template_name = 'accounting/post_table_list.html'
 
+# create views
 
+class EmployerCreateView(generic.CreateView):
+    model = Employer
+    fields = '__all__'
+    success_url = '/'
+
+    template_name = 'accounting/create_form.html'
+
+class StatusCreateView(generic.CreateView):
+    model = Status
+    fields = '__all__'
+    success_url = '/'
+
+    template_name = 'accounting/create_form.html'
+
+class InsuranceCreateView(generic.CreateView):
+    model = Insurance
+    fields = '__all__'
+    success_url = '/'
+
+    template_name = 'accounting/create_form.html'
+
+class PostCreateView(generic.CreateView):
+    model = Post
+    fields = '__all__'
+    success_url = '/'
+
+    template_name = 'accounting/create_form.html'
