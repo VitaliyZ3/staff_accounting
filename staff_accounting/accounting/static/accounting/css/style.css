@@ -2,3 +2,7 @@
     margin-left: 7%;
     margin-right: 7%; 
 }
+.id-column {
+    cursor: pointer;
+    color: blue;
+}

@@ -16,7 +16,11 @@ class EmployerListView(SingleTableMixin, FilterView):
     table_class = EmployerTable
     filterset_class = EmployerFilter
 
+
     template_name = 'accounting/employer_table_list.html'
+
+class EmployerInfo(generic.DetailView):
+    model = Employer
 
 class StatusListView(SingleTableMixin, FilterView):
     model = Status

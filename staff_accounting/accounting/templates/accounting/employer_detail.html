@@ -1,0 +1,21 @@
+{% extends 'accounting/base.html'%}
+{% load crispy_forms_tags %}
+
+{% block title %} Картка працівника {% endblock %}
+
+
+{% block main %}
+
+<div class="card" style="width: 90%; margin-left: auto; margin-right: auto; margin-top: 50px;">
+    <div class="card-body">
+      <h5 class="card-title">{{ object.surname }} {{ object.name }} {{ object.patronymic }}</h5>
+      <h6 class="card-texr">Посада: {{ object.post }}</h6>
+      <h6 class="card-texr">Страховка: {{ object.insurance }}</h6>
+      <h6 class="card-texr">Статус: {{ object.status }}</h6>
+      <h6 class="card-texr">Номер телефону: {{ object.phone_number }}</h6>
+      <h6 class="card-texr">Електронна скринька: {{ object.email }}</h6>
+      <p class="card-text"><b>Характеристика:</b> {{ object.description|safe|linebreaks }}</p>
+    </div>
+  </div>
+
+{% endblock %}

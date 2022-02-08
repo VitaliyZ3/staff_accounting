@@ -7,7 +7,7 @@ class EmployerFilter(django_filters.FilterSet):
 
     class Meta:
         model = Employer
-        fields = '__all__'
+        fields = ('id', 'surname', 'name', 'patronymic', 'phone_number', 'email')
 
 
 class InsuranceFilter(django_filters.FilterSet):
